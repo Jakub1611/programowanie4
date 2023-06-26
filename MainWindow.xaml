@@ -1,0 +1,236 @@
+﻿<Window x:Class="LasotaProjekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LasotaProjekt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="Studenci">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Studenci}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Imię" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NowyStudent.Imie}"></TextBox>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Nazwisko" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding NowyStudent.Nazwisko}"></TextBox>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Nr Indeksu" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NowyStudent.NrIndeksu}"></TextBox>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Rocznik" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding NowyStudent.Rocznik}"></TextBox>
+
+                <Button x:Name="NowyStudentButton" Grid.Row="5" Grid.Column="0" Click="NowyStudentButton_Click">Dodaj Studenta</Button>
+
+                <WrapPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                    <Label>Id:</Label>
+                    <TextBox x:Name="StudentIdTextBox" MinWidth="40"/>
+                    <Button x:Name="UsunStudentaButton" Click="UsunStudentaButton_Click">Usuń studenta</Button>
+                    <Button x:Name="AktualizujStudentaButton" Click="AktualizujStudentaButton_Click" Margin="5,0">Aktualizuj studenta</Button>
+                </WrapPanel>
+
+            </Grid>
+
+        </TabItem>
+        <TabItem Header="Grupy">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Grupy}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Kod Grupy" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NowaGrupa.KodGrupy}"></TextBox>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Typ Grupy" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding NowaGrupa.TypGrupy}"></TextBox>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Kierunek" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NowaGrupa.Kierunek}"></TextBox>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Semestr" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding NowaGrupa.Semestr}"></TextBox>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Tryb Studiów" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding NowaGrupa.TrybStud}"></TextBox>
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Stopień" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding NowaGrupa.Stopien}"></TextBox>
+
+                <Button x:Name="NowaGrupaButton" Grid.Row="7" Grid.Column="0" Click="NowaGrupaButton_Click">Dodaj Grupę</Button>
+
+                <WrapPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+                    <Label>Id:</Label>
+                    <TextBox x:Name="GrupaIdTextBox" MinWidth="40"/>
+                    <Button x:Name="UsunGrupeButton" Click="UsunGrupeButton_Click">Usuń grupę</Button>
+                    <Button x:Name="AktualizujGrupeButton" Click="AktualizujGrupeButton_Click" Margin="5,0">Aktualizuj grupę</Button>
+                </WrapPanel>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Przedmioty">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Przedmioty}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Nazwa Przedmiotu" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NowyPrzedmiot.NazwaPrzedmiotu}"></TextBox>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Kod Przedmiotu" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding NowyPrzedmiot.KodPrzedmiotu}"></TextBox>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Godziny" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NowyPrzedmiot.Godziny}"></TextBox>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Kierunek" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding NowyPrzedmiot.Kierunek}"></TextBox>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Semestr" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding NowyPrzedmiot.Semestr}"></TextBox>
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Tryb Studiów" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding NowyPrzedmiot.TrybStud}"></TextBox>
+
+                <Label Grid.Row="7" Grid.Column="0" Content="Stopień" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding NowyPrzedmiot.Stopien}"></TextBox>
+
+                <Label Grid.Row="8" Grid.Column="0" Content="Rok Akademicki" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding NowyPrzedmiot.RokAkademicki}"></TextBox>
+
+                <Button x:Name="NowyPrzedmiotButton" Grid.Row="9" Grid.Column="0" Click="NowyPrzedmiotButton_Click">Dodaj Przedmiot</Button>
+
+                <WrapPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                    <Label>Id:</Label>
+                    <TextBox x:Name="PrzedmiotIdTextBox" MinWidth="40"/>
+                    <Button x:Name="UsunPrzedmiotButton" Click="UsunPrzedmiotButton_Click">Usuń przedmiot</Button>
+                    <Button x:Name="AktualizujPrzedmiotButton" Click="AktualizujPrzedmiotButton_Click" Margin="5,0">Aktualizuj przedmiot</Button>
+                </WrapPanel>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Pozycje Planu">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding PozycjePlanu}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Przedmiot" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Przedmioty}" SelectedItem="{Binding NowaPozycjaPlanu.Przedmiot}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0}, {1}">
+                                        <Binding Path="NazwaPrzedmiotu"/>
+                                        <Binding Path="KodPrzedmiotu"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Grupy" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Grupy}" SelectedItem="{Binding NowaPozycjaPlanu.Grupa}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0}, {1}, {2}, {3}">
+                                        <Binding Path="KodGrupy"/>
+                                        <Binding Path="TypGrupy"/>
+                                        <Binding Path="Kierunek"/>
+                                        <Binding Path="Semestr"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Dzień" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" DisplayDate="{Binding NowaPozycjaPlanu.Dzien}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Godzina Od" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding NowaPozycjaPlanu.GodzinaOd}"></TextBox>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Godzina Do" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding NowaPozycjaPlanu.GodzinaDo}"></TextBox>
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Sala" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding NowaPozycjaPlanu.Sala}"></TextBox>
+
+                <Button x:Name="NowaPozycjaPlanuButton" Grid.Row="7" Grid.Column="0" Click="NowaPozycjaPlanuButton_Click">Dodaj Pozycję Planu</Button>
+
+                <WrapPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+                    <Label>Id:</Label>
+                    <TextBox x:Name="PozycjaPlanuIdTextBox" MinWidth="40"/>
+                    <Button x:Name="UsunPozycjePlanuButton" Click="UsunPozycjePlanuButton_Click">Usuń pozycję planu</Button>
+                    <Button x:Name="AktualizujPozycjePlanuButton" Click="AktualizujPozycjePlanuButton_Click" Margin="5,0">Aktualizuj pozycję planu</Button>
+                </WrapPanel>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
